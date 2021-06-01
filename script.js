@@ -1,27 +1,71 @@
-window.onload = pixelBoard;
 
-function pixelBoard(){
-  for (let index = 0; index < 25; index += 1) {
-    let divPixelBoard = document.querySelector('#pixel-board');
-    let pixel = document.createElement('div')
-    pixel.className = 'pixel';
-    divPixelBoard.appendChild(pixel);
+const vermelho = document.querySelector('.red')
+vermelho.style.backgroundColor = 'red'
+const preto = document.querySelector('.black')
+preto.style.backgroundColor = 'black'
+const azul = document.querySelector('.pink')
+azul.style.backgroundColor = 'pink'
+const verde = document.querySelector('.green')
+verde.style.backgroundColor = 'green'
+const limpar = document.querySelector('#clear-board')
+
+const pixel = document.querySelectorAll('.pixel')
+
+var corAtual = "black";
+selecionarPixel();
+vermelho.addEventListener('click', selecionarVermelho)
+preto.addEventListener('click', selecionarPreto)
+azul.addEventListener('click', selecionarAzul)
+verde.addEventListener('click', selecionarVerde)
+limpar.addEventListener('click', pintarTudoDeBranco)
+
+function pintarTudoDeBranco() {
+  for (let index in pixel) {
+      pixel[index].style.backgroundColor = 'white'
   }
 }
 
-document.addEventListener('click', selecionaCor);
-
-function selecionaCor(){
-  let corAplicavel = document.querySelector('.selector');
-  let pixel = eve
-  
+function selecionarPixel() {
+  for (let index in pixel) {
+    pixel[index].addEventListener('click', function () {
+      pixel[index].style.backgroundColor = corAtual
+    })
+  }
 }
 
-// function Coloring(event) {
-//   const pixel = event.target;
-//   pixel.style.backgroundColor = document.querySelectorAll('.selected')[0].id;
-// }
-// const pixels = document.querySelectorAll('.pixel');
-// for (let index = 0; index < pixels.length; index += 1) {
-//   pixels[index].addEventListener('click', Coloring);
-// }
+function selecionarVermelho(event) {
+  vermelho.classList.remove('selected')
+  verde.classList.remove('selected')
+  azul.classList.remove('selected')
+  preto.classList.remove('selected')
+  let cor = event.target.style.backgroundColor
+  vermelho.classList.add('selected')
+  corAtual = cor
+}
+function selecionarPreto(event) {
+  vermelho.classList.remove('selected')
+  verde.classList.remove('selected')
+  azul.classList.remove('selected')
+  preto.classList.remove('selected')
+  let cor = event.target.style.backgroundColor
+  preto.classList.add('selected')
+  corAtual = cor
+}
+function selecionarAzul(event) {
+  vermelho.classList.remove('selected')
+  verde.classList.remove('selected')
+  azul.classList.remove('selected')
+  preto.classList.remove('selected')
+  let cor = event.target.style.backgroundColor
+  azul.classList.add('selected')
+  corAtual = cor
+}
+function selecionarVerde(event) {
+  vermelho.classList.remove('selected')
+  verde.classList.remove('selected')
+  azul.classList.remove('selected')
+  preto.classList.remove('selected')
+  let cor = event.target.style.backgroundColor
+  verde.classList.add('selected')
+  corAtual = cor
+}

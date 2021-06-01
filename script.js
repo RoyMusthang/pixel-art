@@ -1,4 +1,3 @@
-
 const vermelho = document.querySelector('.red')
 vermelho.style.backgroundColor = 'red'
 const preto = document.querySelector('.black')
@@ -20,19 +19,18 @@ verde.addEventListener('click', selecionarVerde)
 limpar.addEventListener('click', pintarTudoDeBranco)
 
 function pintarTudoDeBranco() {
-  for (let index in pixel) {
+  for (let index = 0; index < pixel.length; index += 1) {
       pixel[index].style.backgroundColor = 'white'
   }
 }
 
 function selecionarPixel() {
-  for (let index in pixel) {
+  for (let index = 0; index < pixel.length; index += 1) {
     pixel[index].addEventListener('click', function () {
       pixel[index].style.backgroundColor = corAtual
     })
   }
 }
-
 function selecionarVermelho(event) {
   vermelho.classList.remove('selected')
   verde.classList.remove('selected')

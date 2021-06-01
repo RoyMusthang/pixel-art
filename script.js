@@ -16,9 +16,9 @@ vermelho.addEventListener('click', selecionarVermelho)
 preto.addEventListener('click', selecionarPreto)
 azul.addEventListener('click', selecionarAzul)
 verde.addEventListener('click', selecionarVerde)
-limpar.addEventListener('click', pintarTudoDeBranco)
+limpar.addEventListener('click', corDefaut)
 
-function pintarTudoDeBranco() {
+function corDefaut() {
   for (let index = 0; index < pixel.length; index += 1) {
       pixel[index].style.backgroundColor = 'white'
   }
@@ -32,38 +32,39 @@ function selecionarPixel() {
   }
 }
 function selecionarVermelho(event) {
+  let cor = event.target.style.backgroundColor
   vermelho.classList.remove('selected')
   verde.classList.remove('selected')
   azul.classList.remove('selected')
   preto.classList.remove('selected')
-  let cor = event.target.style.backgroundColor
   vermelho.classList.add('selected')
   corAtual = cor
 }
 function selecionarPreto(event) {
+  let cor = event.target.style.backgroundColor
   vermelho.classList.remove('selected')
   verde.classList.remove('selected')
   azul.classList.remove('selected')
   preto.classList.remove('selected')
-  let cor = event.target.style.backgroundColor
   preto.classList.add('selected')
   corAtual = cor
 }
 function selecionarAzul(event) {
+  let cor = event.target.style.backgroundColor
   vermelho.classList.remove('selected')
   verde.classList.remove('selected')
   azul.classList.remove('selected')
   preto.classList.remove('selected')
-  let cor = event.target.style.backgroundColor
   azul.classList.add('selected')
   corAtual = cor
 }
 function selecionarVerde(event) {
+  let cor = event.target.style.backgroundColor
   vermelho.classList.remove('selected')
   verde.classList.remove('selected')
   azul.classList.remove('selected')
   preto.classList.remove('selected')
-  let cor = event.target.style.backgroundColor
   verde.classList.add('selected')
   corAtual = cor
 }
+

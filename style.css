@@ -1,7 +1,7 @@
 * {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 #title {
@@ -14,7 +14,7 @@ box-sizing: border-box;
   height: 100px;
   border: 1px solid black;
   display: inline-block;
-  margin: 15px 15px;
+  margin: 15px;
 
 }
 
@@ -31,20 +31,20 @@ header {
   height: 5vh;
 }
 
-.tabela{
+.tabela {
   display: flex;
   justify-content: center;
 }
 
 .pixel {
-  width:40px;
-  height:40px;
-  background-color:white;
-  border:1px solid rgb(0, 0, 0)
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border: 1px solid black;
 }
 
 .limpador {
   display: flex;
-  margin: 20px 20px;
+  margin: 20px;
   justify-content: center;
 }

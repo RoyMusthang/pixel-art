@@ -36,7 +36,7 @@ function setBackground(element) {
 function drawColor() {
   const pixelsListElements = document.getElementsByClassName('pixel');
 
-  for (let elementIndex = 0; elementIndex < pixelsListElements.length; elementIndex += 1 ) {
+  for (let elementIndex = 0; elementIndex < pixelsListElements.length; elementIndex += 1) {
     const pixelElement = pixelsListElements[elementIndex];
     pixelElement.addEventListener('click', () => setBackground(pixelElement));
   }
